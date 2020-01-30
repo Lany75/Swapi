@@ -1,0 +1,11 @@
+.infoPerso {
+    font-size: 25px;
+    
+}
+
+.listInfos {
+    display: none;
+}
+.listInfosdisplay {
+    display: block;
+}

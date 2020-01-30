@@ -1,0 +1,10 @@
+.listPersos {
+    background-color: beige;
+    height: 50%;
+    width: 40%;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
