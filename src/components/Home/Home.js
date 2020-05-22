@@ -1,9 +1,9 @@
 import React from "react";
+import Axios from "axios";
 
-import ListPerso from "../ListPersos/ListPersos";
-import Infos from "../Infos/Infos";
-import Search from "../Search/Search";
-
+import ListPersos from "../ListPersos/ListPersos";
+import InfoPerso from "../InfoPerso/InfoPerso";
+//import Search from "../Search/Search";
 import "./Home.css";
 
 class Home extends React.Component {
@@ -19,7 +19,7 @@ class Home extends React.Component {
   }
 
   getListPerso() {
-    fetch("https://swapi.dev/api/people/")
+    /*     fetch("https://swapi.dev/api/people/")
       .then((reponse) => {
         return reponse.json();
       })
@@ -29,16 +29,23 @@ class Home extends React.Component {
           listePersonnages: data.results,
         });
         //console.log(this.state.listePersonnages);
+      }); */
+
+    Axios.get("https://swapi.dev/api/people/").then((response) => {
+      console.log(response.data.results);
+      this.setState({
+        listePersonnages: response.data.results,
       });
+    });
   }
 
   render() {
     return (
       <div className="home">
-        <Search />
+        {/* <Search /> */}
         <div className="persosInfos">
-          <ListPerso listePerso={this.state.listePersonnages} />
-          <Infos listePerso={this.state.listePersonnages} />
+          <ListPersos listePerso={this.state.listePersonnages} />
+          <InfoPerso listePerso={this.state.listePersonnages} />
         </div>
       </div>
     );

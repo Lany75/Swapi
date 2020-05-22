@@ -1,11 +1,16 @@
+.infos {
+  background-color: beige;
+  height: 50%;
+  width: 40%;
+}
+
 .infoPerso {
-    font-size: 25px;
-    
+  font-size: 25px;
 }
 
 .listInfos {
-    display: none;
+  display: none;
 }
 .listInfosdisplay {
-    display: block;
+  display: block;
 }
